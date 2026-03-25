@@ -4,7 +4,7 @@ let btnBasketClose = document.querySelector(".btn__close");
 let btnAddToBasket = document.querySelectorAll(".add--to--basket");
 let basketCardContainer = document.querySelector(".basket__card__container");
 let basketTotalPrice = document.querySelector(".basket__total-price");
-let btnCardClose = document.querySelector(".btn__card__close");
+
 
 let arrBasket = [];
 
@@ -20,6 +20,11 @@ btnBasketClose.addEventListener("click", () => {
 });
 
 
+function generateId(){
+  return Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+}
+
+
 function sumPrice(arr) {
   let sum = 0;
   for (let i = 0; i < arr.length; i++) {
@@ -28,8 +33,8 @@ function sumPrice(arr) {
   return sum;
 }
 
-function updateTotal(){
-   basketTotalPrice.textContent = `${sumPrice(arrBasket)}$`
+function updateTotal() {
+  basketTotalPrice.textContent = `${sumPrice(arrBasket)}$`;
 }
 
 
@@ -37,6 +42,7 @@ function addToBusket(obj) {
   let basketCard = document.createElement("div");
   basketCard.classList.add("basket__card");
   basketCardContainer.append(basketCard);
+  basketCard.dataset.id = obj.id;
 
   let img = document.createElement("img");
   img.classList.add("basket__card__image");
@@ -63,8 +69,19 @@ function addToBusket(obj) {
   cardPrice.innerText = `${obj.price}`;
   cardPriceText.textContent = `Цена: ${cardPrice.innerText}`;
   cardItem.append(cardPriceText);
-}
 
+  buttonCardClose.addEventListener("click", (e) => {
+    let card = e.target.closest(".basket__card");
+
+    const id = card.dataset.id;
+    arrBasket = arrBasket.filter(item => item.id !== id);
+
+    card.remove();
+
+    updateTotal();
+
+  });
+}
 
 btnAddToBasket.forEach((button) => {
   button.addEventListener("click", (e) => {
@@ -73,18 +90,19 @@ btnAddToBasket.forEach((button) => {
     let name = card.querySelector(".card__name").textContent;
     let price = +card.querySelector("span").textContent;
     let image = card.querySelector("img").src;
+    let id = generateId()
 
     let product = {
+      id,
       name,
       price,
-      image,
+      image
     };
-
-
+    
     arrBasket.push(product);
     addToBusket(product);
-    updateTotal()
+    updateTotal();
+
+    console.log(arrBasket)
   });
 });
-
-
