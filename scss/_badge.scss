@@ -1,0 +1,29 @@
+.badge{
+    display: flex;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(93, 93, 93);
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    position: absolute;
+    bottom: 2px;
+    left: 1px;
+    color: white;
+    font-size: 12px;
+}
+
+.basket__badge{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    color: white;    
+    background-color: #8658c2;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 4px;
+    right: 0;
+}

@@ -1,0 +1,52 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+    &__wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid grey;
+        background: linear-gradient(135deg, #0f172a, #1e293b);
+        box-sizing: border-box;
+        padding: 0 20px;
+        min-height: 60px;
+    }
+    &__logo{
+        color: #8658c2;
+        font-weight: bold;
+        font-size: 32px;
+    }
+    &__list{
+        list-style: none;
+        display: flex;
+        gap: 50px;
+        align-items: center;
+        font-weight: bold;
+        color: #7a48bb;
+        flex-wrap: wrap;
+    }
+    &__basket{
+        position: relative;
+        display: block;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: url(../image/basket.png) no-repeat center;
+        background-size: contain;
+        border: none;
+        cursor: pointer;
+            &:hover{
+                transform: scale(1.05);
+            }
+            &:active{
+                transform: scale(0.95);
+            }
+    }
+}
+
+
+

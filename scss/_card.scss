@@ -1,0 +1,120 @@
+.card__item {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  height: 60px;
+  justify-content: space-between;
+  padding-top: 5px;
+  box-sizing: border-box;
+}
+
+
+.img__basket__bar {
+  display: block;
+  width: 50px;
+  height: 50px;
+  background: url(../image/basket.png) no-repeat center;
+  background-size: contain;
+}
+.basket__card__container {
+  overflow-y: auto;
+
+}
+.basket__card__container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.basket__card__container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.basket__card__container::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #7b2ff7, #9b4dff);
+  border-radius: 10px;
+}
+
+.basket__card__container::-webkit-scrollbar-thumb:hover {
+  background: #b06cff;
+}
+
+.basket__card {
+  width: 300px;
+  min-height: 60px;
+  border: 1px solid grey;
+  border-radius: 8px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  overflow: hidden;
+  padding-right: 5px;
+  margin-bottom: 5px;
+  position: relative;
+}
+.basket__card__image {
+  width: 60px;
+}
+.basket__info {
+  width: 100%;
+  border-top: 1px solid grey;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+}
+.basket__summary {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+.basket__checkout {
+  align-self: center;
+  margin-bottom: 5px;
+}
+.basket__card--name {
+  align-self: center;
+  font-weight: bold;
+  padding-left: 21px;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  border-bottom: 1px solid grey;
+  padding-bottom: 20px;
+}
+
+.card {
+  width: 300px;
+  min-height: 400px;
+  border: 1px solid grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.card img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.card__name {
+  text-align: center;
+  font-weight: bold;
+}
+.card__price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+#phone,
+#laptop,
+#accessories {
+  scroll-margin-top: 60px;
+}
+
