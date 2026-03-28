@@ -42,6 +42,8 @@ function sumPrice(arr) {
 function updateTotal() {
   basketTotalPrice.textContent = `${sumPrice(arrBasket)}$`;
 }
+updateTotal();
+
 
 function saveToLocalStorage() {
   localStorage.setItem("arrBasket", JSON.stringify(arrBasket));
