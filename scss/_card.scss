@@ -1,3 +1,5 @@
+@use "./mixins" as *;
+
 .card__item {
   display: flex;
   flex-direction: column;
@@ -49,6 +51,10 @@
   padding-right: 5px;
   margin-bottom: 5px;
   position: relative;
+  @include md{
+    width: 250px;
+  }
+
 }
 .basket__card__image {
   width: 60px;

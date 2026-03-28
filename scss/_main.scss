@@ -1,3 +1,5 @@
+@use "./mixins" as *;
+
 a:hover {
   color: blue;
 }
@@ -5,6 +7,10 @@ body {
   background-color: #292929;
   color: #8658c2;
   margin-top: 60px;
+  @include md{
+    margin-top: 0px;
+  }
+
 }
 
 main {

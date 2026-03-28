@@ -1,3 +1,5 @@
+@use "./mixins" as *;
+
 .footer {
   min-height: 100px;
   display: flex;
@@ -6,5 +8,8 @@
   margin-top: 10px;
     &__text {
         font-size: 12px;
+  }
+  @include sm{
+    text-align: center;
   }
 }
